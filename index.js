@@ -5,23 +5,27 @@ const { Server } = require("socket.io");
 const app = express();
 const httpServer = createServer(app);
 
+function generateRandomNumber(min = 1000, max = 2000) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 const nfityList = [
   {
     InstrumentIdentifier: "NIFTY 50",
-    LastTradePrice: 17359.75,
+    LastTradePrice: generateRandomNumber(),
     PriceChange: 279.05,
     PriceChangePercentage: 1.63,
   },
   {
     InstrumentIdentifier: "NIFTY BANK",
-    LastTradePrice: 40608.65,
+    LastTradePrice: generateRandomNumber(),
     PriceChange: 698.5,
     PriceChangePercentage: 1.75,
   },
 
   {
     InstrumentIdentifier: "NIFTY FIN SERVICE",
-    LastTradePrice: 18058.7,
+    LastTradePrice: generateRandomNumber(),
     PriceChange: 264.85,
     PriceChangePercentage: 1.49,
   },
